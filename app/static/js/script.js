@@ -61,6 +61,10 @@ function prestamos() {
 function toggleWishlist(bookTitle) {
   var wishlist = document.getElementById("wishlist");
   var listItem = document.createElement("li");
+  if (book.prestado) {
+    alert("El libro ya está prestado");
+    return;
+}
   listItem.textContent = bookTitle;
   wishlist.appendChild(listItem);
 }
