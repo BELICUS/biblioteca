@@ -33,12 +33,12 @@
       <i class="bi bi-menu-button-wide-fill" id="menu-button"></i>
       <div class="caja-menu" id="dropdown-menu">
         <div class="btn-menu" onclick="toggleForm()">Agregar libro</div>
-        <div class="btn-menu">Lista de recomendaciones</div>
-        <div class="btn-menu">Prestamos</div>
+        <div class="btn-menu" >Lista de recomendaciones</div>
+        <div class="btn-menu" onclick="prestamos()">Prestamos</div>
       </div>
     </div>
   </header>
-  <div id="formulario-agregar-libro">
+  <div id="formulario-agregar-libro" style="display: none;"> 
     <form method="POST" action="{{ url_for('agregar_libro') }}">
       <label for="titulo">Título:</label>
       <input type="text" id="titulo" name="titulo" required>
@@ -49,7 +49,14 @@
       <button type="submit">Agregar</button>
     </form>
   </div> 
-
+    <div id="prestamos" style="display: none;">
+    <h2>Lista de Deseados</h2>
+      <ul id="wishlist">  
+        <!-- Los libros deseados se agregarán aquí -->
+    </ul>
+    
+  </div>
+  
 
   <div id="RespBusq">
   {% block body %}
@@ -76,8 +83,11 @@
         y reflexiones sobre la vida, el amor y la amistad. A través de sus encuentros con personajes excéntricos,
         el niño revela la importancia de las cosas simples y la necesidad de cuidar lo que amamos.
       </p>
+      <button class="heart-button" onclick="toggleWishlist('El Principito')"><i class="bi bi-bookmark-plus"></i></button>
     </div>
   </div>
+
+  
 
   <div class="container">
     <div class="card" style="display: flex; align-items: center;">
@@ -90,6 +100,7 @@
          un mundo lleno de criaturas mágicas y lugares asombrosos. La historia se centra en Frodo Bolsón, un hobbit
           aparentemente ordinario que se encuentra en posesión del Anillo Único, un objeto de gran poder creado por 
           el oscuro señor Sauron.
+          <button class="heart-button" onclick="toggleWishlist('El Señor de los anillos')"><i class="bi bi-bookmark-plus"></i></button>
       </p>
     </div>
   </div>
@@ -104,6 +115,7 @@
       <p>Es una novela que narra las aventuras de un hidalgo manchego, Alonso Quijano, quien, obsesionado con los libros de caballería,
          decide convertirse en caballero andante y salir al mundo a combatir el mal y defender a los débiles. Adopta el nombre de Don Quijote
          de la Mancha y emprende un viaje acompañado por su fiel escudero, Sancho Panza.
+         <button class="heart-button" onclick="toggleWishlist('Don quijote de la mancha')"><i class="bi bi-bookmark-plus"></i></button>
       </p>
     </div>
   </div>
@@ -118,6 +130,7 @@
       <p>Es un poema épico atribuido a Homero, que narra el largo viaje de regreso a Ítaca de Ulises, rey de Ítaca, 
         tras la Guerra de Troya. A lo largo de su odisea, Ulises se enfrenta a numerosas aventuras, criaturas míticas
         y peligros, mientras anhela volver a su hogar y reunirse con su esposa Penélope y su hijo Telémaco.
+        <button class="heart-button" onclick="toggleWishlist('La odisea')"><i class="bi bi-bookmark-plus"></i></button>
       </p>
     </div>
   </div>

@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
-
+//ocultar fromulario
 function toggleForm() {
   var form = document.getElementById("formulario-agregar-libro");
   if (form.style.display === "none") {
@@ -47,3 +47,21 @@ function toggleForm() {
       form.style.display = "none";
   }
 }
+
+//lista de prestamos
+function prestamos() {
+  var form = document.getElementById("prestamos");
+  if (form.style.display === "none") {
+      form.style.display = "block";
+  } else {
+      form.style.display = "none";
+  }
+}
+
+function toggleWishlist(bookTitle) {
+  var wishlist = document.getElementById("wishlist");
+  var listItem = document.createElement("li");
+  listItem.textContent = bookTitle;
+  wishlist.appendChild(listItem);
+}
+    
