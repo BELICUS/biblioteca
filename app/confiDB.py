@@ -7,7 +7,7 @@ def connectionBD():
         host ="localhost",
         user ="root",
         passwd ="",
-        port = 3306,
+        port = 33065,
         database = "ejemplo_youtube"
         )
     return mydb
