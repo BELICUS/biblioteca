@@ -1,5 +1,4 @@
 #Importando  flask y algunos paquetes
-import email
 from flask import Flask, render_template, request, redirect, url_for
 from confiDB import *  #Importando conexion BD
 

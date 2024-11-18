@@ -38,3 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
+function toggleForm() {
+  var form = document.getElementById("formulario-agregar-libro");
+  if (form.style.display === "none") {
+      form.style.display = "block";
+  } else {
+      form.style.display = "none";
+  }
+}
