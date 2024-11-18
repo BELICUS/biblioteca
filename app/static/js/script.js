@@ -57,15 +57,31 @@ function prestamos() {
       form.style.display = "none";
   }
 }
+//doble click   
+var clickCounts = {};
 
 function toggleWishlist(bookTitle) {
-  var wishlist = document.getElementById("wishlist");
-  var listItem = document.createElement("li");
-  if (book.prestado) {
-    alert("El libro ya está prestado");
-    return;
+    if (!clickCounts[bookTitle]) {
+        clickCounts[bookTitle] = 0;
+    }
+
+    clickCounts[bookTitle]++;
+
+    if (clickCounts[bookTitle] >= 2) {
+        alert("El libro ya está prestado");
+        return;
+    }
+
+    var wishlist = document.getElementById("wishlist");
+    var listItem = document.createElement("li");
+    listItem.textContent = bookTitle;
+    wishlist.appendChild(listItem);
 }
-  listItem.textContent = bookTitle;
-  wishlist.appendChild(listItem);
-}
-    
+
+// Ejemplo de uso
+document.querySelectorAll(".heart-button").forEach(function(button) {
+    button.addEventListener("click", function() {
+        var bookTitle = this.getAttribute("data-book-title");
+        toggleWishlist(bookTitle);
+    });
+});
