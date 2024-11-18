@@ -5,12 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biblioteca</title>
-  <link rel="icon" href="{{url_for('static', filename ='assets/imgs/favicon.ico')}}" type="image/x-icon">
+  <link rel="icon" id='icon' href="{{url_for('static', filename ='abc.svg')}}" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="{{ url_for('static', filename ='assets/css/home.css') }}">
+
 </head>
 <body>
-
+  
   <header>
     <div class="logo">
       <a href="/">
@@ -63,6 +64,7 @@
 
     <h1 class="text-center">
       Biblioteca
+      
     </h1>
     
   {% endblock %}
